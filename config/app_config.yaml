@@ -1,0 +1,50 @@
+# =====================================================================
+# 全局配置（app_config.yaml）
+# 所有输出持久化为 ./data 下的 JSON 文件，不使用数据库。
+# =====================================================================
+
+# 输出目录（JSON 结果与 channel_state.json 均写入此处）
+output_dir: ./data
+
+# 网络代理（yt-dlp 与字幕下载共用）
+proxy:
+  enabled: true
+  host: 127.0.0.1
+  port: 7897
+
+# yt-dlp 运行参数
+yt_dlp:
+  # 从本地 Chrome 提取登录态 cookie（留空字符串则跳过，降级为匿名访问）
+  cookies_from_browser: chrome
+  # TLS/HTTP2 指纹伪装目标（需 curl_cffi，禁止在未确认的情况下修改）
+  impersonate: chrome
+  socket_timeout: 15
+  retries: 1
+  extractor_retries: 1
+  # 单条下载之间的间隔（秒），防限流
+  sleep_interval: 10
+  # yt-dlp 抽取阶段内部请求（看网页 / player API 等）之间的间隔（秒）
+  sleep_interval_requests: 5
+
+# 全局限流（跨进程生效，状态写入 data/.rate_limit_state.json）
+rate_limit:
+  # 任意两次出站请求之间的最小间隔（秒）；同进程与跨 CLI 进程均强制等待
+  min_request_interval: 15
+  # 字幕下载触发 HTTP 429 时的退避重试次数
+  subtitle_max_retry: 2
+  # 首次退避等待秒数（逐次翻倍：30s -> 60s）
+  subtitle_retry_backoff: 30
+
+# 内容过滤（关键词搜索场景）
+filter:
+  enabled: false                    # 全局开关
+  engine: keyword_rubric            # keyword_rubric（内置本地规则引擎）
+  match_threshold: 0.6              # score >= 0.6 → matched
+  needs_review_threshold: 0.3       # 0.3 <= score < 0.6 → needs_review
+  rubric:
+    - dimension: "主题相关"
+      keywords: ["AI", "agent", "大模型"]
+    - dimension: "技术深度"
+      keywords: ["tutorial", "deep dive", "tutorial", "架构"]
+    - dimension: "时效性"
+      keywords: ["2025", "2026", "latest", "new"]

@@ -1,0 +1,32 @@
+# 运行产物（JSON 输出与状态文件）不入库
+data/
+
+# 本地 Python 环境与工具缓存
+.venv/
+__pypackages__/
+.python-version
+
+# Python、测试与覆盖率缓存
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 本地配置与敏感凭据
+.env
+.env.*
+!.env.example
+
+# 日志与临时文件
+*.log
+*.tmp
+*.temp
+
+# 编辑器与操作系统文件
+.DS_Store
+.vscode/
+.idea/

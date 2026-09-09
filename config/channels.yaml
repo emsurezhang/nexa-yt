@@ -1,0 +1,9 @@
+channels:
+  - url: "https://www.youtube.com/@LinusTechTips/videos"
+    alias: "ltt"
+    max_results: 50    
+    enabled: true
+  - url: "https://www.youtube.com/@MKBHD/videos"
+    alias: "mkbhd"
+    max_results: 30
+    enabled: true

@@ -1,0 +1,12 @@
+# 依赖白名单（Agents.md 硬性约束）：
+#   Chrome 浏览器（cookie 提取 / 指纹伪装） + yt-dlp 为核心依赖。
+#   引入任何新依赖前必须先向用户确认。
+#
+# curl_cffi：yt-dlp impersonate=chrome 所需的 TLS 指纹组件（yt-dlp[impersonate]）。
+# PyYAML  ：解析 config/*.yaml。
+# pydantic：输出模型校验（types.py）。
+
+yt-dlp>=2025.1.0
+curl_cffi>=0.7.0   # yt-dlp impersonate=chrome 所需的 TLS 指纹组件（yt-dlp 新版已移除 [impersonate] extra）
+PyYAML>=6.0
+pydantic>=2.0

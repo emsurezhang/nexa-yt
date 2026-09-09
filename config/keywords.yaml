@@ -1,0 +1,14 @@
+# 关键词配置（keywords.yaml）
+# 功能需求
+# 2.1 关键词管理
+# - 支持从配置文件批量读取关键词
+# - 每个关键词可独立配置是否启用 (enabled: true/false)
+# - 支持手动输入关键词（CLI --keyword 追加 / --override-keywords 覆盖）
+
+keywords:
+  - keyword: "AI agent framework"
+    enabled: true
+  - keyword: "MCP server tutorial"
+    enabled: true
+  - keyword: "LLM tool use"
+    enabled: false
