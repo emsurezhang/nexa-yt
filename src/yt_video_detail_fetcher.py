@@ -8,8 +8,8 @@
 #   b. 按 --lang 优先级匹配语言
 #   c. 下载指定字幕的 VTT 内容
 #   d. 解析 VTT → SubtitleSegment 列表
-#   e. 清理时间戳和重复行（clean_subtitle=True）
-#   f. 组装 SubtitleTrack 和 SubtitlesContainer
+#   e. 清理时间戳和重复行，并转换为连续文本
+#   f. 组装 SubtitlesContainer
 # 6. 组装 FetchMeta + VideoDetail → VideoFetchOutput
 # 7. 序列化为 JSON 输出
 #
@@ -42,7 +42,6 @@ from .types import (
     FetchMeta,
     SubtitleSegment,
     SubtitlesContainer,
-    SubtitleTrack,
     VideoDetail,
     VideoFetchOutput,
     YouTubeItem,
@@ -95,6 +94,21 @@ def parse_vtt(content: str) -> list[SubtitleSegment]:
             continue
         block.append(line.strip())
     return segments
+
+
+def vtt_to_text(content: str) -> str:
+    """将 WebVTT 转为连续文本，去除滚动字幕产生的前后重叠。"""
+    text = ""
+    for segment in parse_vtt(content):
+        if not text:
+            text = segment.text
+            continue
+
+        overlap = min(len(text), len(segment.text))
+        while overlap and text[-overlap:] != segment.text[:overlap]:
+            overlap -= 1
+        text += segment.text[overlap:]
+    return text
 
 
 def _expand_langs(langs: list[str]) -> list[str]:
@@ -185,10 +199,10 @@ class YTVideoDetailFetcher(YDLBase):
             if content is None:
                 self.logger.warning("字幕下载失败 %s(%s): %s", lang, kind, last_error)
                 continue
-            segments = parse_vtt(content)
-            container.tracks.append(SubtitleTrack(lang=lang, kind=kind, segments=segments))
-            self.logger.info("字幕获取完成: %s (%s), %d 段", lang, kind, len(segments))
-        if not container.tracks:
+            container.text = vtt_to_text(content)
+            self.logger.info("字幕获取完成: %s (%s), %d 字符", lang, kind, len(container.text))
+            break
+        if not container.text:
             self.logger.info("无可用字幕 (langs=%s)", langs)
         return container
 

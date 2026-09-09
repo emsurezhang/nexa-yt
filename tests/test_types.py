@@ -11,9 +11,7 @@ from src.types import (
     FetchMeta,
     SearchItem,
     SearchOutput,
-    SubtitleSegment,
     SubtitlesContainer,
-    SubtitleTrack,
     VideoDetail,
     VideoFetchOutput,
     YouTubeItem,
@@ -59,17 +57,12 @@ class TestPydanticOutputs(unittest.TestCase):
         output = VideoFetchOutput(
             meta=FetchMeta(operation="video fetch", url="u", fetched_at=datetime.now()),
             detail=VideoDetail(video_id="v1", url="u", title="t"),
-            subtitles=SubtitlesContainer(
-                tracks=[SubtitleTrack(
-                    lang="zh-CN", kind="manual",
-                    segments=[SubtitleSegment(start=0.0, end=1.5, text="你好")],
-                )]
-            ),
+            subtitles=SubtitlesContainer(text="你好"),
         )
         text = output.model_dump_json(indent=2)
         loaded = json.loads(text)
         self.assertEqual(loaded["detail"]["video_id"], "v1")
-        self.assertEqual(loaded["subtitles"]["tracks"][0]["segments"][0]["text"], "你好")
+        self.assertEqual(loaded["subtitles"]["text"], "你好")
         # datetime 序列化为 ISO 字符串
         self.assertIn("T", loaded["meta"]["fetched_at"])
 

@@ -1,0 +1,254 @@
+{
+  "segments": [
+    {
+      "seq": 0,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "先来一句话，把大家耳朵叫醒，有人公开说，FDE 这个岗位是个\"肮脏的小秘密\"，因为它根本不存在。",
+      "start_s": 0.0,
+      "end_s": 5.92
+    },
+    {
+      "seq": 1,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "[Surprise-wa] 啊？不存在？可 Edward Donner 上个月还在视频里算，说现在市场上有三万多个 FDE 岗位空缺，前沿实验室总包能过一百万美金呢！",
+      "start_s": 6.27,
+      "end_s": 17.79
+    },
+    {
+      "seq": 2,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "对，这就是最有意思的地方。说这话的是 Sierra 的 Natalie Meurer，今年七月在 AI Engineer 播客上讲的。但反过来想，一个\"说不清楚\"的岗位能开出这个价，恰恰说明里面有真东西。今天咱们就把它讲清楚：FDE 到底怎么干活，一步一步来。",
+      "start_s": 18.14,
+      "end_s": 37.82
+    },
+    {
+      "seq": 3,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "故事得从 Palantir 说起，这个岗位就是他们发明的。Y Combinator 去年九月请过 Palantir 的老兵 Bob McGrew，他的描述我觉得特别形象：产品能做的，和客户真正需要的，中间永远有条沟。FDE 干什么？就是先到沟的那一头，给客户铺一条砾石路。",
+      "start_s": 38.17,
+      "end_s": 58.49
+    },
+    {
+      "seq": 4,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "砾石路？听着挺糙的啊。[laughing]",
+      "start_s": 58.84,
+      "end_s": 65.72
+    },
+    {
+      "seq": 5,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "糙就对了，因为要快。关键是后半句，产品团队在后面看着这条土路，琢磨怎么把它总结成能服务后面五个、十个客户的东西，最后把它修成\"铺装高速\"。a16z 那期《How Palantir Scaled》把这个过程比作机器学习里的反向传播，先死死盯住一个客户要的结果，反推\"要造什么才能撑住这个结果\"，跑通了再往外推广。这跟先造产品再找客户，完全是反着来的。",
+      "start_s": 66.07,
+      "end_s": 97.43
+    },
+    {
+      "seq": 6,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "那具体到一单活，第一步是什么？",
+      "start_s": 97.78,
+      "end_s": 101.46
+    },
+    {
+      "seq": 7,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "很多人以为是把电脑打开，其实第一顶帽子是\"听\"。Rippling 的创始 FDE 在七月 Aced 的播客上说，这岗位要戴三顶帽子：顾问、产品经理、软件工程师。任何一单活的开局不是说话，是听，而且是主动听，得听到客户不想对任何人说的那些事。",
+      "start_s": 101.81,
+      "end_s": 124.21
+    },
+    {
+      "seq": 8,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "为什么？客户自己说的还不够吗？",
+      "start_s": 124.56,
+      "end_s": 127.28
+    },
+    {
+      "seq": 9,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "这就是第二个反直觉的点：客户说的从来都不是\"问题\"，只是\"症状\"。真正的功夫是听出症状背后的真问题，然后找\"客户愿意接受的最小交付范围\"，快速出一个糙版本，再迭代。",
+      "start_s": 127.63,
+      "end_s": 143.79
+    },
+    {
+      "seq": 10,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "最小、糙、快，这不是糙，这是策略。",
+      "start_s": 144.14,
+      "end_s": 148.14
+    },
+    {
+      "seq": 11,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "对。而且三顶帽子里的\"顾问\"，决定了它不是售前，售前做完 demo 赢下单子，活就结束了，FDE 是一头扎进一个客户，从头到尾对结果负责。",
+      "start_s": 148.49,
+      "end_s": 161.61
+    },
+    {
+      "seq": 12,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "等等，我一直想问，这跟驻场开发、跟咨询公司有啥区别？听着有点像啊。",
+      "start_s": 161.96,
+      "end_s": 169.48
+    },
+    {
+      "seq": 13,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "[Uhm] 问到点子上了，这也是最大的坑。Anthropic 的 Kevin Bai，他也是 Palantir 和 Rippling 出身，七月在 AI Engineer 播客上把话说得很绝：如果你的 FDE 全是从零写代码，那你不叫 FDE，你叫软件开发外包公司。",
+      "start_s": 169.83,
+      "end_s": 187.27
+    },
+    {
+      "seq": 14,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "[Dissatisfaction-hnn] 这话说得挺狠的。",
+      "start_s": 187.62,
+      "end_s": 190.18
+    },
+    {
+      "seq": 15,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "但狠得有道理。真正的分界就两条：第一，客户买的不是软件，也不是你的工时，是一个\"结果\"。所以 Palantir 敢收平均每个客户四百万美金一年，断层第一，第二名 ServiceNow 才一百二十万。第二，你的团队是在平台提供的\"积木\"上搭方案，永远不自己造轮子。没有这两条，FDE 就是人天计费的外包。",
+      "start_s": 190.53,
+      "end_s": 218.69
+    },
+    {
+      "seq": 16,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "对了，我之前听人提过 Palantir 内部有什么 Echo 团队、Delta 团队，这是干啥的？",
+      "start_s": 219.04,
+      "end_s": 226.08
+    },
+    {
+      "seq": 17,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "Bob McGrew 在 YC 那场专门讲了。Echo 团队是扎在客户现场的分析师，负责跟用户聊，搞清这个客户到底想要什么 demo、什么用例；Delta 团队就是那些部署工程师，写代码极快，也，他的原话是\"吃很多苦\"。",
+      "start_s": 226.43,
+      "end_s": 246.43
+    },
+    {
+      "seq": 18,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "吃苦算岗位职责？[laughing]",
+      "start_s": 246.78,
+      "end_s": 250.94
+    },
+    {
+      "seq": 19,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "你别笑，这是认真的。a16z 那位嘉宾说得更直白：FDE 的工作就是吸收客户的痛苦，然后产出产品，原话是，\"痛苦就是护城河\"。而且 Bob 还补了一刀：如果你做的这事不在客户 CEO 的头五件要事里，大概率成不了。",
+      "start_s": 251.29,
+      "end_s": 270.81
+    },
+    {
+      "seq": 20,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "听着好 brutal，那公司为什么还要这么干？直接多招产品经理做调研不行吗？",
+      "start_s": 271.16,
+      "end_s": 277.24
+    },
+    {
+      "seq": 21,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "Bob 的回答很妙：这也是产品发现。销售主导的发现是站在外面跟人聊，FDE 主导的发现是站进去把问题真解了，含金量完全不同。",
+      "start_s": 277.59,
+      "end_s": 288.15
+    },
+    {
+      "seq": 22,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "那回到开头那个\"肮脏的小秘密\"。Natalie Meurer 说 FDE 根本不存在，她想表达什么？",
+      "start_s": 288.5,
+      "end_s": 297.46
+    },
+    {
+      "seq": 23,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "她的意思是这个词每个年代指的东西都不一样。早期 Palantir 大量本地化部署，forward deployed 就是字面意思，人在客户机房，干的活更像 DevOps，主打平台稳定。后来有了 Foundry，活儿越加越多：定制方案、数据集成、客户培训，全算上。",
+      "start_s": 297.81,
+      "end_s": 319.57
+    },
+    {
+      "seq": 24,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "所以她会问\"你是哪个年份的 FDE\"，2008 款、2012 款、还是 2020 款？",
+      "start_s": 319.92,
+      "end_s": 327.92
+    },
+    {
+      "seq": 25,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "对，这个词的\"年份\"一直在变。而她的结论反而是个好玩的反转：当 coding agent 让代码越来越便宜，所有工程师都在往 FDE 的方向变，数据要集成、客户要理解、结果要负责。这些以前叫\"FDE 的事\"，以后可能就是\"每个工程师的事\"。",
+      "start_s": 328.27,
+      "end_s": 347.15
+    },
+    {
+      "seq": 26,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "所以不是 FDE 不存在了，是 FDE 无处不在了？",
+      "start_s": 347.5,
+      "end_s": 351.5
+    },
+    {
+      "seq": 27,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "可以这么说。以前 Palantir 甚至不让新工程师直接进产品团队，必须先下一线干六到十二个月，现在，越来越多的 AI 公司都在学这一套。",
+      "start_s": 351.85,
+      "end_s": 364.17
+    },
+    {
+      "seq": 28,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "总结今天这条线：FDE 从 Palantir 的一条砾石路出发，靠听出真问题、最小交付快速迭代、在平台上搭而不是从零写，把一次性交付变成产品的高速公路。",
+      "start_s": 364.52,
+      "end_s": 377.16
+    },
+    {
+      "seq": 29,
+      "speaker": "B",
+      "kind": "dialog",
+      "text": "最后留个开放问题吧，如果你们公司也在建 FDE 团队，你们内部是怎么切 Echo 和 Delta 的分工的？一个人全包，还是两个角色分开？欢迎在评论区告诉我们。",
+      "start_s": 377.51,
+      "end_s": 389.67
+    },
+    {
+      "seq": 30,
+      "speaker": "A",
+      "kind": "dialog",
+      "text": "另外，想听\"一百万美金的 FDE 怎么入行\"单独展开一期的，也欢迎点名，素材我们手里都有。下次见！",
+      "start_s": 390.02,
+      "end_s": 400.9
+    }
+  ],
+  "total_s": 400.9,
+  "sample_rate": 48000
+}

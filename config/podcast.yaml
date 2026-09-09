@@ -1,0 +1,40 @@
+# podcast_tts 示例配置 —— 优先级：CLI 参数 > 本文件 > 代码默认值
+# 用法：podcast_tts script.md -o out.mp3 --config config/podcast.example.yaml
+
+# 脚本小名 → 说话人 ID（改人名不用改代码；圆桌 3+ 人直接加映射）
+speakers:
+  小硕: A
+  小丽: B
+
+# 音色档：reference（参考音频克隆，音色一致性最佳）/ voice_design（凭空造声）
+# 允许混合：A 用克隆、B 用 Design。ref_audio 相对本文件所在目录解析。
+voices:
+  A:
+    mode: reference
+    ref_audio: ../voice_samples/male.mp3
+  B:
+    mode: reference
+    ref_audio: ../voice_samples/female.mp3
+
+# 节奏：可整体调成"快剪"或"慢聊"风格（CLI --gap / --section-gap 可覆盖）
+rhythm:
+  dialog_gap: 0.35     # 对话轮次留白
+  section_gap: 1.0     # 章节停顿
+  note_gap: 0.15       # 笑声等副语言留白
+
+# 引擎参数
+tts:
+  model: models/VoxCPM2
+  device: auto         # auto | cuda | mps | cpu
+  cfg: 2.0
+  inference_timesteps: 10
+  load_denoiser: false
+  optimize: true
+
+# 其它
+narrate_sections: false   ## 【章节】由 N 旁白口播
+max_seg_chars: 220        # 长句切分上限（断点续跑/失败隔离的粒度）
+bitrate: 192k
+cache_dir: .cache/podcast_tts
+title: 示例节目
+artist: nexa 博客

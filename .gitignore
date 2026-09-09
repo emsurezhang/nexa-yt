@@ -1,10 +1,17 @@
 # 运行产物（JSON 输出与状态文件）不入库
 data/
 
+# 本地 TTS 缓存与导出音频
+.cache/
+out-*.mp3
+
 # 本地 Python 环境与工具缓存
 .venv/
 __pypackages__/
 .python-version
+
+# 本地 TTS 模型权重
+models/VoxCPM2/
 
 # Python、测试与覆盖率缓存
 __pycache__/

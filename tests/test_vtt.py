@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import unittest
 
-from src.yt_video_detail_fetcher import _parse_timestamp, parse_vtt
+from src.yt_video_detail_fetcher import _parse_timestamp, parse_vtt, vtt_to_text
 
 SAMPLE_VTT = """\
 WEBVTT
@@ -67,6 +67,23 @@ class TestParseVtt(unittest.TestCase):
 
     def test_header_only_returns_empty(self):
         self.assertEqual(parse_vtt("WEBVTT\n"), [])
+
+
+class TestVttToText(unittest.TestCase):
+    def test_removes_rolling_caption_overlap(self):
+        vtt = """\
+WEBVTT
+
+00:00:00.000 --> 00:00:02.000
+Good. First ride
+
+00:00:02.000 --> 00:00:04.000
+First ride in Cybercab
+
+00:00:04.000 --> 00:00:06.000
+in Cybercab today.
+"""
+        self.assertEqual(vtt_to_text(vtt), "Good. First ride in Cybercab today.")
 
 
 if __name__ == "__main__":

@@ -66,14 +66,9 @@ if BaseModel is not None:
         end: float
         text: str
 
-    class SubtitleTrack(BaseModel):
-        """一条字幕轨道。kind: manual | auto。"""
-        lang: str
-        kind: str = "manual"
-        segments: list[SubtitleSegment] = Field(default_factory=list)
-
     class SubtitlesContainer(BaseModel):
-        tracks: list[SubtitleTrack] = Field(default_factory=list)
+        """视频字幕的连续纯文本。"""
+        text: str = ""
 
     class VideoDetail(BaseModel):
         """视频完整元数据（由 yt-dlp info_dict 转换）。"""
